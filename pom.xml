@@ -26,11 +26,12 @@
         <primefaces.version>6.1</primefaces.version>
 	</properties>
 <repositories>
-	<repository>
-		<id>prime-repo</id>
-		<name>Prime Repo</name>
-		<url>http://repository.primefaces.org</url>
-	</repository>
+    <repository>
+        <id>prime-repo</id>
+        <name>PrimeFaces Maven Repository</name>
+        <url>http://repository.primefaces.org</url>
+        <layout>default</layout>
+    </repository>
 </repositories> 
 	<dependencies>
 		<dependency>
