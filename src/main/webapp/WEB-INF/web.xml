@@ -13,7 +13,7 @@
 
 	</servlet>
 			<welcome-file-list>
-    <welcome-file>index.jsf</welcome-file>
+    <welcome-file>index.xhtml</welcome-file>
 </welcome-file-list>
 <context-param>
   <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
