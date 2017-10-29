@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Technical description</title>
+    </h:head>
+<h:body>
+<!-- Header  --> 
+<h1>Event Registry on Spring MVC Web with Primefaces</h1>
+          
+  <p:tabMenu activeIndex="#{param.i}">
+    <p:menuitem value="Overview" outcome="/index.html" >
+        <f:param name="i" value="0" />
+    </p:menuitem>
+    <p:menuitem value="Users" outcome="/user-layout.xhtml" >
+        <f:param name="i" value="1" />
+    </p:menuitem>
+    <p:menuitem value="Places" outcome="/place-layout.xhtml" >
+        <f:param name="i" value="2" />
+   </p:menuitem>
+   <p:menuitem value="Events" outcome="/event-layout.xhtml" >
+        <f:param name="i" value="3" />
+   </p:menuitem>
+       <p:menuitem value="Registrations" outcome="/registration-layout.xhtml" >
+        <f:param name="i" value="4" />
+   </p:menuitem>
+       <p:menuitem value="User manual" outcome="/user-manual.xhtml" >
+        <f:param name="i" value="5" />
+   </p:menuitem>
+       <p:menuitem value="Technical description" outcome="/technical-description.xhtml" >
+        <f:param name="i" value="6" />
+   </p:menuitem>
+   <p:menuitem value="Contact" outcome="/contact.xhtml" >
+        <f:param name="i" value="7" />
+   </p:menuitem>
+ </p:tabMenu>
+<!-- Local content -->
+      <div style="margin:20px">
+        <p:fieldset legend="Ciao a Tutti!" style="margin-bottom:20px">
+        Java 8<br />
+        Spring Boot<br />
+        Prime Faces<br />
+        Postgres<br />
+        spring.jpa.hibernate<br />
+        Spring security (sometimes turned off)<br />
+        ....<br />
+        ....<br />
+        more details coming soon!<br /><br /><br />
+        </p:fieldset>
+      </div>
+</h:body>
+</f:view>
+</html>

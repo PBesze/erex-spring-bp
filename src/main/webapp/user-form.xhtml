@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+<ui:composition template="user-layout.xhtml">
+    <ui:define name="content">
+        <h:form id="userForm">
+            <p:panel header="User Details">
+                <h:panelGrid columns="1">
+                    <p:outputLabel for="nick" value="Nick: " />
+                    <p:inputText id="nick" value="#{userController.user.nick}" />
+                    <p:outputLabel for="email" value="email: " />
+                    <p:inputText id="email" value="#{userController.user.email}" />
+                    <h:commandButton value="Save" action="#{userController.save}" />
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
