@@ -15,11 +15,11 @@
 	
 <context-param>
   <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
-  <param-value>/</param-value>
+  <param-value>WEB-INF/lib</param-value>
 </context-param>
 <context-param>
 	<param-name>primefaces.THEME</param-name>
-	<param-value>sunny</param-value>
+	<param-value>humanity</param-value>
 </context-param>
 <!-- Just here so the JSF implementation can initialize -->
 	<servlet-mapping>
