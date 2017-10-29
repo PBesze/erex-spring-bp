@@ -20,8 +20,8 @@
   <param-value>META_INF/resources</param-value>
 </context-param>
 <context-param>
-	<param-name>primefaces.THEME</param-name>
-	<param-value>humanity</param-value>
+    <param-name>primefaces.THEME</param-name>
+    <param-value>humanity</param-value>
 </context-param>
 <!-- Just here so the JSF implementation can initialize -->
 	<servlet-mapping>
@@ -45,10 +45,7 @@
     <servlet>
 	<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-<init-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/web-application-config.xml</param-value>
-	</init-param>
+
 	<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
