@@ -13,7 +13,7 @@
 
 	</servlet>
 			<welcome-file-list>
-    <welcome-file>index.xhtml</welcome-file>
+    <welcome-file>faces/index.xhtml</welcome-file>
 </welcome-file-list>
 <context-param>
   <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
@@ -26,7 +26,11 @@
 <!-- Just here so the JSF implementation can initialize -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.faces</url-pattern>
+		
+		    <url-pattern>/faces/*</url-pattern>
+    <url-pattern>*.jsf</url-pattern>
+    <url-pattern>*.faces</url-pattern>
+    <url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
   
 <!-- Use JSF view templates saved as *.xhtml, for use with Facelets -->
