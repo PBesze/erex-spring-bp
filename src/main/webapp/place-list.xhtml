@@ -9,24 +9,36 @@
 <ui:composition template="place-layout.xhtml">
     <ui:define name="content">
         <h:form id="form">
+         <p:growl id="msgs" showDetail="true"/>
             <p:panel header="Places List">
-                <p:dataTable id="table" var="place" value="#{placeList.places}">
-                    <p:column>
-                        <f:facet name="header"># Id</f:facet>
-                        <h:outputText value="#{place.id}" />
-                    </p:column>
+                <p:dataTable id="table" var="place" value="#{placeList.places}" editable="true">
+           		<p:ajax event="rowEdit" listener="#{placeList.onRowEdit}" update=":form:msgs" />
+       			<p:ajax event="rowEditCancel" listener="#{placeList.onRowCancel}" update=":form:msgs" />
+  
 
-                    <p:column>
-                        <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{place.name}" />
-                    </p:column>
+			<p:column headerText="Id">
+          		<p:cellEditor>
+              			<f:facet name="output"><h:outputText value="#{place.id}" /></f:facet>
+               			<f:facet name="input"><p:inputText id="modelInputId" value="#{place.id}" style="width:100%"/></f:facet>
+           		</p:cellEditor>
+       		</p:column>
+       		<p:column headerText="Name with cell editor">
+          		<p:cellEditor>
+              			<f:facet name="output"><h:outputText value="#{place.name}" /></f:facet>
+               			<f:facet name="input"><p:inputText id="modelInputName" value="#{place.name}" style="width:100%"/></f:facet>
+           		</p:cellEditor>
+       		</p:column>
+       		<p:column headerText="Name with cell editor">
+          		<p:cellEditor>
+              			<f:facet name="output"><h:outputText value="#{place.max_visitor_nr}" /></f:facet>
+               			<f:facet name="input"><p:inputText id="modelInputMvn" value="#{place.max_visitor_nr}" style="width:100%"/></f:facet>
+           		</p:cellEditor>
+       		</p:column>
 
-                    <p:column>
-                        <f:facet name="header">Max Number of Visitors</f:facet>
-                        <h:outputText value="#{place.max_visitor_nr}">
-                            
-                        </h:outputText>
-                    </p:column>
+                    
+                    <p:column style="width:32px">
+          				 <p:rowEditor/>
+       				</p:column>
                 </p:dataTable>
             </p:panel>
         </h:form>

@@ -9,8 +9,12 @@
 <ui:composition template="user-layout.xhtml">
     <ui:define name="content">
         <h:form id="form">
+        <p:growl id="msgs" showDetail="true"/>
             <p:panel header="User List">
-                <p:dataTable id="table" var="user" value="#{userList.users}">
+                <p:dataTable id="table" var="user" value="#{userList.users}" editable="true">
+                <p:ajax event="rowEdit" listener="#{userList.onRowEdit}" update=":form:msgs" />
+       			<p:ajax event="rowEditCancel" listener="#{userList.onRowCancel}" update=":form:msgs" />
+  
                     <p:column>
                         <f:facet name="header"># Id</f:facet>
                         <h:outputText value="#{user.id}" />
@@ -27,6 +31,9 @@
                             
                         </h:outputText>
                     </p:column>
+                    <p:column style="width:32px">
+          				 <p:rowEditor />
+       				</p:column>
                 </p:dataTable>
             </p:panel>
         </h:form>

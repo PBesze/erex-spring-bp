@@ -1,11 +1,19 @@
 package com.example.demo.presentation;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import com.example.demo.model.Place;
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import org.primefaces.event.CellEditEvent;
+import org.primefaces.event.RowEditEvent;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 
 @Scope (value = "session")
 @Component (value = "placeList")
@@ -23,5 +31,25 @@ public class PlaceListController {
     public List<Place> getPlaces() {
     	places = placeRepository.findAll();
         return places;
+    }
+    
+    public void onRowEdit(RowEditEvent event) {
+        FacesMessage msg = new FacesMessage("Place Edited", ((Place) event.getObject()).getName());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+    
+    public void onRowCancel(RowEditEvent event) {
+        FacesMessage msg = new FacesMessage("Edit Cancelled", ((Place) event.getObject()).getName());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+    
+    public void onCellEdit(CellEditEvent event) {
+        Object oldValue = event.getOldValue();
+        Object newValue = event.getNewValue();
+         
+        if(newValue != null && !newValue.equals(oldValue)) {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cell Changed", "Old: " + oldValue + ", New:" + newValue);
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
     }
 }
