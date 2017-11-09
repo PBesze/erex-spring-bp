@@ -35,7 +35,7 @@ public class PlaceListController {
     
     public void onRowEdit(RowEditEvent event) {
    // 	@TODO modified values of place in the row have to be saved/updated 
-    	placeRepository.saveAndFlush(((Place) event.getNewValue()));
+    //	placeRepository.saveAndFlush(((Place) event.getNewValue()));
     	FacesMessage msg = new FacesMessage("Place Edited", ((Place) event.getObject()).getName());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
