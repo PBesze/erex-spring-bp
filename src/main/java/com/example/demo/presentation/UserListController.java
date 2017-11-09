@@ -32,7 +32,7 @@ public class UserListController {
     }
     
     public void onRowEdit(RowEditEvent event) {
-        FacesMessage msg = new FacesMessage("Place Edited", ((User) event.getObject()).getNick());
+        FacesMessage msg = new FacesMessage("uuups sorry - User not yet Edited", ((User) event.getObject()).getNick());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
     
