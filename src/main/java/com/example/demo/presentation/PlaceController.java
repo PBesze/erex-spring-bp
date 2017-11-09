@@ -18,6 +18,11 @@ public class PlaceController {
         place = new Place();
         return "/place-list.xhtml?faces-redirect=true";
     }
+    
+    public String update(Place place) {
+        placeRepository.save(place);
+        return "/place-list.xhtml?faces-redirect=true";
+    }
 
     public Place getPlace() {
         return place;

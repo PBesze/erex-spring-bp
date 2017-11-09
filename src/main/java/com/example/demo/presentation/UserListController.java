@@ -1,5 +1,6 @@
 package com.example.demo.presentation;
 
+import com.example.demo.model.Place;
 import com.example.demo.model.User;
 
 import org.primefaces.event.CellEditEvent;
@@ -28,6 +29,11 @@ public class UserListController {
     public List<User> getUsers() {
     	users = userRepository.findAll();
         return users;
+    }
+    
+    public void onRowEdit(RowEditEvent event) {
+        FacesMessage msg = new FacesMessage("Place Edited", ((User) event.getObject()).getNick());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
     
     public void onRowCancel(RowEditEvent event) {

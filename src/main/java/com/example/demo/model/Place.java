@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "spring_regsitration")
+@Table(name = "spring_place")
 public class Place {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.AUTO)
